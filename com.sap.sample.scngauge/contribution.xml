@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension 
+	eula="" 
+	id="com.sap.sample.scngauge" 
+	title="SCN Tutorial Gauge" 
+	vendor="SAP" 
+	version="15.1" 
+	xmlns="http://www.sap.com/bi/zen/sdk" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.sap.com/bi/zen/sdk http://www.sap.com/bi/zen/sdk ">
+  <license>license</license>
+  <group
+	id="SCNGaugeAngleSettings"
+	title="Gauge Arc"
+	tooltip="Gauge Angle Settings"/>
+  <group
+	id="SCNGaugeColorSettings"
+	title="Color"
+	tooltip="Gauge Color and Conditional Formatting Settings"/>
+  <group
+	id="SCNGaugeLineSettings"
+	title="Guide Lines"
+	tooltip="Guide Line Ring and Line Settings"/>
+  <component 
+  	databound="false" 
+  	group="" 
+  	handlerType="div" 
+  	icon="res/gauge.png" 
+  	id="SCNGauge" 
+  	propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html" 
+  	title="Gauge" 
+  	tooltip="" 
+  	visible="true">
+    <stdInclude kind="d3"/>
+    <jsInclude>res/js/component.js</jsInclude>
+	<cssInclude>res/css/component.css</cssInclude>
+
+	<property
+		id="enableArc"
+		title="Enable Gauge Arc"
+		type="boolean"
+		group="SCNGaugeAngleSettings"/>	
+	<property
+		id="startAngleDeg"
+		title="Start Angle"
+		type="float"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="endAngleDeg"
+		title="End Angle"
+		type="float"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="innerRad"
+		title="Inner Radius"
+		type="float"
+		bindable="true"/>
+	<property
+		id="outerRad"
+		title="Outer Radius"
+		type="float"
+		visible="false"/>
+	<property
+		id="offsetLeft"
+		title="Centerpoint Offset X-Axis"
+		type="int"		
+		visible="false"/>
+	<property
+		id="offsetDown"
+		title="Centerpoint Offset Y-Axis"
+		type="int"
+		visible="false"/>
+	<property
+		id="paddingTop"
+		title="Top Padding"
+		type="int"/>
+	<property
+		id="paddingBottom"
+		title="Bottom Padding"
+		type="int"/>
+	<property
+		id="paddingLeft"
+		title="Left Padding"
+		type="int"/>
+	<property
+		id="paddingRight"
+		title="Right Padding"
+		type="int"/>
+
+		
+	<property
+		id="colorCode"
+		title="Default Color"
+		type="Color"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+		
+	<property id="colorArray" type="Array" title="Conditional Formatting" group="SCNGaugeAngleSettings">
+	 	<property id="conditionalFormat" type="Object" title="Conditional Format">
+	   		<property id="threshold" type="int" title="Measure Threshold" />
+	  		<property id="colorID" type="Color" title="Color Code" />
+	  	</property>
+	</property>
+	
+	<property
+		id="useMeasures"
+		title="Use Measures"
+		type="boolean"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="endAngleDegMax"
+		title="End Angle Max"
+		type="float"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="measureMax"
+		title="Measure Max Value"
+		type="int"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="measureMin"
+		title="Measure Min Value"
+		type="int"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="measureVal"
+		title="Measure"
+		type="int"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+		
+		
+	<!-- Part 8 -->
+	<property id="enableGuideLines" title="Enable Guide Lines" type="boolean" group="SCNGaugeLineSettings"/>
+	<property id="guideColorCode" title="Guide Line Color" type="Color" group="SCNGaugeLineSettings"/>
+	<property id="bracketThickness" title="Guide Line Thickness" type="int" group="SCNGaugeLineSettings"/>
+	<property id="enableGuideRing" title="Enable Guide Ring" type="boolean" group="SCNGaugeLineSettings"/>
+	<property id="ringColorCode" title="Guide Ring Color" type="Color" group="SCNGaugeLineSettings"/>
+	<property id="ringThickness" title="Guide Ring Thickness" type="int" group="SCNGaugeLineSettings"/>
+	<property id="ringStartAngleDeg" title="Guide Ring Start Angle" type="float" group="SCNGaugeLineSettings"/>
+	<property id="ringEndAngleDeg" title="Guide Ring End Angle" type="float" group="SCNGaugeLineSettings"/>
+		
+	<initialization>
+		<defaultValue property="WIDTH">200</defaultValue>
+		<defaultValue property="HEIGHT">200</defaultValue>
+		<defaultValue property="enableArc">true</defaultValue>
+		<defaultValue property="startAngleDeg">-90.0</defaultValue>
+		<defaultValue property="endAngleDeg">90.0</defaultValue>
+		<defaultValue property="useMeasures">false</defaultValue>
+		<defaultValue property="endAngleDegMax">90.0</defaultValue>
+		<defaultValue property="colorCode">blue</defaultValue>
+		<defaultValue property="colorArray"></defaultValue>
+        <defaultValue property="arrayExample"></defaultValue>
+        
+        <defaultValue property="enableGuideLines">false</defaultValue>
+        <defaultValue property="guideColorCode">blue</defaultValue>
+        <defaultValue property="bracketThickness">2</defaultValue>
+        <defaultValue property="enableGuideRing">false</defaultValue>
+        <defaultValue property="ringColorCode">blue</defaultValue>
+        <defaultValue property="ringThickness">2</defaultValue>
+        <defaultValue property="ringStartAngleDeg">0.0</defaultValue>
+        <defaultValue property="ringEndAngleDeg">360.0</defaultValue>
+	</initialization>	
+  </component>
+</sdkExtension>

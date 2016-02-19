@@ -1,0 +1,21 @@
+<bi:biapp bi:version="1600" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="com.sap.sample.scngauge" sdk1:version="15.1">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="SCNGAUGE_1" type="com_sap_sample_scngauge_SCNGauge">
+			<bi:property name="LEFT_MARGIN" value="59"/>
+			<bi:property name="TOP_MARGIN" value="55"/>
+			<bi:property name="WIDTH" value="399"/>
+			<bi:property name="HEIGHT" value="309"/>
+			<bi:property name="ringStartAngleDeg" value="-45"/>
+			<bi:property name="ringEndAngleDeg" value="45"/>
+			<bi:property name="enableGuideRing" value="X"/>
+			<bi:property name="enableGuideLines" value="X"/>
+			<bi:property name="startAngleDeg" value="-45"/>
+			<bi:property name="endAngleDeg" value="30"/>
+			<bi:property name="endAngleDegMax" value="45"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
